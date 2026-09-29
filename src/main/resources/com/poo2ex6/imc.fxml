@@ -78,16 +78,15 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="373.0" prefWidth="302.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calculo IMC">
-                     <VBox.margin>
-                        <Insets bottom="30.0" />
-                     </VBox.margin>
-                  </Text>
                   <Text fx:id="outputImc" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
                      <font>
                         <Font size="72.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
                   </Text>
+                  <Text fx:id="outputClassificacao" strokeType="OUTSIDE" strokeWidth="0.0" text="Classificação" />
                </children>
             </VBox>
          </children>

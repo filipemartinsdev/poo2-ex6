@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
+import java.security.PrivateKey;
 import java.util.List;
 
 
@@ -43,6 +44,9 @@ public class ImcController {
 
     @FXML
     private Text outputImc;
+
+    @FXML
+    private Text outputClassificacao;
 
     @FXML
     private TableView<ImcRegistry> tableImc;
@@ -178,9 +182,27 @@ public class ImcController {
             outputImc.setText(
                     String.format("%.2f", task.getValue())
             );
+            outputClassificacao.setText(
+                    getClassificacaoImc(task.getValue())
+            );
         });
 
         return new Thread(task);
+    }
+
+    private String getClassificacaoImc(Float value) {
+        if (value < 18.5)
+            return "Abaixo do peso";
+        else if (value < 24.9)
+            return "Peso ideal";
+        else if (value < 29.9)
+            return "Sobrepeso";
+        else if (value < 34.9)
+            return "Obesidade grau I";
+        else if (value < 39.9)
+            return "Obesidade grau II";
+        else
+            return "Obesidade grau III";
     }
 
 
@@ -234,6 +256,7 @@ public class ImcController {
             inputAltura.clear();
             inputPeso.clear();
             outputImc.setText("0.00");
+            outputClassificacao.setText("Classificação");
             showAlertInfo("Sucesso", "IMC salvo com sucesso");
         });
 
