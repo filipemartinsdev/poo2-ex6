@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ImcApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-//        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
+        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
 
         FXMLLoader fxmlLoader = new FXMLLoader(ImcApplication.class.getResource("imc.fxml"));
 
