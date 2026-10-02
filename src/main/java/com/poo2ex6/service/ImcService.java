@@ -30,6 +30,7 @@ public class ImcService {
             throw new RuntimeException("Nenhum cálculo para salvar");
         }
         imcRepositoryGateway.save(lastCalculation);
+        lastCalculation = null;
     }
 
     public List<ImcRegistry> getAllCalculations(){
